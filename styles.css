@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+.controls {
+    margin: 10px;
+    text-align: center;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333333;
+    color: #55555;
+    border: 1px solid #555555; /* Adding a border for definition */
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition for border color as well */
+}
+
+.controls button:hover {
+    background-color: #454545; /* A lighter hover state for better interaction feedback */
+    border-color: #676767; /* Hover state border color change */
+}
+
+#pc-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    padding: 20px;
+}
+
+.pc-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: move;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid #ffffff22;
+    overflow: hidden;
+}
+
+.pc-card.online {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.pc-card.offline {
+    background: linear-gradient(135deg, #3a3a3a, #5a5a5a);
+}
+
+
+.pc-card h3 {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.pc-icon {
+    width: 40%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.options-menu {
+    position: absolute;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+.options-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options-menu li {
+    padding: 5px 0;
+}
+
+.options-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+
+.options-menu li a:hover {
+    background-color: #444;
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.dragging {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
